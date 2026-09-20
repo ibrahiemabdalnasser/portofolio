@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ibrahim Abd Alnasser | Software & Mobile App Developer</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <style>
+    :root {
+      --bg: #09111e;
+      --card-bg: rgba(15, 23, 42, 0.75);
+      --accent: #38bdf8;
+      --accent-glow: #0284c7;
+      --text: #f8fafc;
+      --muted: #94a3b8;
+      --border: rgba(56, 189, 248, 0.2);
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      scroll-behavior: smooth;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: rgba(9, 17, 30, 0.85);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border);
+      padding: 16px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 1000;
+    }
+    .logo {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--text);
+    }
+    .logo span { color: var(--accent); }
+    nav a {
+      color: var(--muted);
+      text-decoration: none;
+      margin-left: 20px;
+      font-size: 0.95rem;
+      transition: color 0.2s;
+    }
+    nav a:hover { color: var(--accent); }
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 100px 24px 60px;
+    }
+    section { margin-bottom: 70px; }
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 24px;
+      color: var(--accent);
+      border-bottom: 2px solid var(--border);
+      padding-bottom: 8px;
+    }
+    /* Hero */
+    .hero {
+      display: flex;
+      align-items: center;
+      gap: 40px;
+      padding: 40px 0;
+    }
+    .hero-img {
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid var(--accent);
+      box-shadow: 0 0 20px rgba(2, 132, 199, 0.4);
+    }
+    .hero-text h1 { font-size: 2.5rem; margin-bottom: 10px; }
+    .hero-text p.role { font-size: 1.2rem; color: var(--accent); margin-bottom: 14px; }
+    .hero-text p.desc { color: var(--muted); max-width: 600px; margin-bottom: 20px; }
+    .group-code {
+      display: inline-block;
+      background: rgba(56, 189, 248, 0.1);
+      border: 1px solid var(--accent);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      color: var(--accent);
+      margin-bottom: 15px;
+    }
+    .social-links a {
+      color: var(--text);
+      font-size: 1.3rem;
+      margin-right: 15px;
+      transition: color 0.2s;
+    }
+    .social-links a:hover { color: var(--accent); }
+    /* Grid Cards */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 24px;
+      transition: transform 0.2s, border-color 0.2s;
+    }
+    .card:hover {
+      transform: translateY(-4px);
+      border-color: var(--accent);
+    }
+    .card h3 { color: #fff; margin-bottom: 10px; }
+    .card p { color: var(--muted); font-size: 0.95rem; margin-bottom: 15px; }
+    .tags { display: flex; flex-wrap: wrap; gap: 8px; }
+    .tag {
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 4px 10px;
+      border-radius: 6px;
+      font-size: 0.8rem;
+      color: var(--accent);
+    }
+    /* Timeline */
+    .timeline-item {
+      position: relative;
+      padding-left: 25px;
+      border-left: 2px solid var(--border);
+      margin-bottom: 25px;
+    }
+    .timeline-item::before {
+      content: "";
+      position: absolute;
+      left: -6px;
+      top: 5px;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--accent);
+    }
+    .timeline-date { font-size: 0.85rem; color: var(--accent); }
+    .timeline-title { font-weight: 600; font-size: 1.1rem; }
+    .timeline-desc { color: var(--muted); font-size: 0.95rem; }
+    footer {
+      text-align: center;
+      padding: 30px;
+      color: var(--muted);
+      border-top: 1px solid var(--border);
+      font-size: 0.9rem;
+    }
+    @media (max-width: 768px) {
+      .hero { flex-direction: column; text-align: center; }
+      nav { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">Ibrahim <span>Abd Alnasser</span></div>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#timeline">Timeline</a>
+      <a href="#certifications">Certifications</a>
+    </nav>
+  </header>
+
+  <div class="container">
+    <!-- Hero Section -->
+    <section id="about" class="hero">
+      <img src="https://via.placeholder.com/160" alt="Ibrahim Headshot" class="hero-img" />
+      <div class="hero-text">
+        <div class="group-code">Group Code: [CAI5_SWD8_S2]</div>
+        <h1>Ibrahim Abd Alnasser</h1>
+        <p class="role">Mobile Application Developer & Software Engineer</p>
+        <p class="desc">
+          Computer Science student specializing in Cross-Platform Mobile Applications using Flutter & Dart. Solid engineering background in ASP.NET Core backend development, REST APIs, and clean software architecture.
+        </p>
+        <div class="social-links">
+          <a href="https://github.com/ibrahiemabdalnasser" target="_blank"><i class="fab fa-github"></i></a>
+          <a href="https://linkedin.com/in/[https://www.linkedin.com/in/ibrahiem-abd-alnasser]" target="_blank"><i class="fab fa-linkedin"></i></a>
+          <a href="mailto:[ibrahiemabdalnasser@gmail.com]"><i class="fas fa-envelope"></i></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+      <h2>Skills & Core Competencies</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Mobile Development</h3>
+          <p>Flutter, Dart, Responsive UI/UX, State Management, Cross-Platform Architecture.</p>
+          <div class="tags"><span class="tag">Flutter</span><span class="tag">Dart</span><span class="tag">Android/iOS</span></div>
+        </div>
+        <div class="card">
+          <h3>Backend & Data</h3>
+          <p>ASP.NET Core, C#, Entity Framework Core, Node.js, REST APIs, SQL Server.</p>
+          <div class="tags"><span class="tag">ASP.NET</span><span class="tag">C#</span><span class="tag">EF Core</span></div>
+        </div>
+        <div class="card">
+          <h3>Software Engineering</h3>
+          <p>Object-Oriented Programming (OOP), SOLID Principles, 3-Tier Architecture, Clean Code.</p>
+          <div class="tags"><span class="tag">OOP</span><span class="tag">SOLID</span><span class="tag">Clean Code</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+      <h2>Featured Projects</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Cairo Metro Routing Simulation</h3>
+          <p>Algorithmic graph routing simulating multi-line transit routes, dynamic fare engines, and station transfers using pure Dart.</p>
+          <div class="tags"><span class="tag">Dart</span><span class="tag">Algorithms</span><span class="tag">Data Structures</span></div>
+        </div>
+        <div class="card">
+          <h3>Employee Management System</h3>
+          <p>Enterprise ASP.NET Core 3-Tier architecture backend with EF Core database migrations, AutoMapper, and SOLID principles.</p>
+          <div class="tags"><span class="tag">ASP.NET Core</span><span class="tag">C#</span><span class="tag">SQL Server</span></div>
+        </div>
+        <div class="card">
+          <h3>Cross-Platform Mobile Showcase</h3>
+          <p>Interactive mobile interface built with Flutter featuring state management, adaptive layouts, and REST API integration.</p>
+          <div class="tags"><span class="tag">Flutter</span><span class="tag">Dart</span><span class="tag">REST API</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience & Timeline Section -->
+    <section id="timeline">
+      <h2>Experience Timeline</h2>
+      <div class="timeline-item">
+        <div class="timeline-date">Specialized Track</div>
+        <div class="timeline-title">Digital Egypt Pioneers Initiative (DEPI)</div>
+        <div class="timeline-desc">Intensive training in cross-platform mobile development using Flutter & Dart.</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-date">Academic Track</div>
+        <div class="timeline-title">University ASP.NET Intensive Training</div>
+        <div class="timeline-desc">Enterprise software architecture, backend engineering, and database systems.</div>
+      </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section id="certifications">
+      <h2>Certifications & Qualifications</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Oracle Certified AI Foundations Associate</h3>
+          <p>Demonstrated foundational mastery of machine learning, deep learning, NLP, and responsible AI architectures.</p>
+        </div>
+        <div class="card">
+          <h3>Orb Scope Node.js & Backend Credential</h3>
+          <p>Verified backend runtime concepts, asynchronous API architectures, and data structures.</p>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <footer>
+    <p>&copy; 2026 Ibrahim Abd Alnasser. Built with Clean Code.</p>
+  </footer>
+
+</body>
+</html>
